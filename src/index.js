@@ -39,7 +39,7 @@ class ColorInput extends React.Component {
           onFocus={this.handleOpen}
           floatingLabelText={ label || inflection.humanize(source) }
           errorText={touched && error}
-          style={elStyle}
+          //style={elStyle}
         />
         {
           this.state.show?

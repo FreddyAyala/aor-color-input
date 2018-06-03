@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import inflection from 'inflection';
 import TextField from 'material-ui/TextField';
 import * as ReactColor from 'react-color';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 require('./ColorInput.css');
 
@@ -34,12 +35,13 @@ class ColorInput extends React.Component {
 
     return (
       <div>
+       <MuiThemeProvider>
         <TextField
           {...input}
           onFocus={this.handleOpen}
           floatingLabelText={ label || inflection.humanize(source) }
           errorText={touched && error}
-          //style={elStyle}
+          style={elStyle}
         />
         {
           this.state.show?
@@ -56,6 +58,7 @@ class ColorInput extends React.Component {
             </div>
             : null
         }
+        </MuiThemeProvider>
       </div>
     )
   }
